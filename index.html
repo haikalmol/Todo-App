@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png" />
+    <link rel="stylesheet" href="styles/css/main.css" />
+    <title>Todo app</title>
+  </head>
+  <body data-theme="">
+    <!-- Top background -->
+    <div class="background">
+      <picture>
+        <source media="(max-width: 399px)" srcset="assets/images/bg-mobile-light.jpg" />
+        <img class="background__img background__img--light" src="assets/images/bg-desktop-light.jpg" alt="" />
+      </picture>
+      <picture>
+        <source media="(max-width: 399px)" srcset="assets/images/bg-mobile-dark.jpg" />
+        <img class="background__img background__img--dark" src="assets/images/bg-desktop-dark.jpg" alt="" />
+      </picture>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+      <h1 class="header__title">TODO</h1>
+      <button class="header__switch" data-theme-switch aria-label="Switch theme color">
+        <i class="header__switch-icon header__switch-icon--sun i-sun"></i>
+        <i class="header__switch-icon header__switch-icon--moon i-moon"></i>
+      </button>
+    </header>
+
+    <!-- Todo aplication -->
+    <main class="todo">
+      <form class="todo__form" data-form>
+        <input type="text" class="todo__form-input" data-input placeholder="Create a new todo..." aria-label="Input a new todo" />
+      </form>
+      <div class="todo__wrapper">
+        <ul class="todo__list" data-list></ul>
+        <div class="todo__menu">
+          <span class="todo__menu-counter" data-counter>5 items left</span>
+          <!-- Desktop menu tabs -->
+          <div class="todo__menu-tabs-desktop">
+            <button class="todo__menu-tabs-item active" data-tabs="all" aria-label="Display all todos">All</button>
+            <button class="todo__menu-tabs-item" data-tabs="active" aria-label="Display active todos">Active</button>
+            <button class="todo__menu-tabs-item" data-tabs="completed" aria-label="Display completed todos">Completed</button>
+          </div>
+          <button class="todo__menu-clear" data-clear>Clear Completed</button>
+        </div>
+      </div>
+      <!-- Mobile menu tabs -->
+      <div class="todo__menu-tabs-mobile">
+        <button class="todo__menu-tabs-item active" data-tabs="all" aria-label="Display all todos">All</button>
+        <button class="todo__menu-tabs-item" data-tabs="active" aria-label="Display active todos">Active</button>
+        <button class="todo__menu-tabs-item" data-tabs="completed" aria-label="Display completed todos">Completed</button>
+      </div>
+      <p class="todo__instruction">Drag and drop to reorder list</p>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+    <script type="module" src="js/app.js"></script>
+  </body>
+</html>

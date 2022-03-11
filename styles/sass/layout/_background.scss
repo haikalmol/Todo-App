@@ -1,0 +1,33 @@
+.background {
+    $root: &;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+    
+    &__img {
+        position: absolute;
+        height: 300px;
+        width: 100%;
+        object-fit: cover;
+        opacity: 0;
+        transition: opacity 1s;
+
+        &--light {
+            opacity: 0;
+        }
+
+        body[data-theme="light"] &--light {
+            opacity: 1;
+        }
+
+        &--dark {
+            opacity: 0;
+        }
+
+        body[data-theme="dark"] &--dark {
+            opacity: 1;
+        }
+    }
+}
